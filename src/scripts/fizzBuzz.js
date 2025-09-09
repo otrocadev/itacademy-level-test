@@ -37,20 +37,42 @@ const checkFizz = (number) => number % 3 === 0
 
 const checkBuzz = (number) => number % 5 === 0
 
-export const fizzBuzz = (number) => {
+export const fizzBuzz = (input) => {
   let isFizzBuzz = [false, false]
+  let finalResult = ''
   let finalMessage = ''
+
   // Validations
+  const inputNumber = parseInt(input)
 
   // Check the number in both 3 and 5 bases
-  isFizzBuzz[0] = checkFizz(number)
-  isFizzBuzz[1] = checkBuzz(number)
+  isFizzBuzz[0] = checkFizz(inputNumber)
+  isFizzBuzz[1] = checkBuzz(inputNumber)
 
   // Complete result message
-  if (isFizzBuzz[0] === true) finalMessage = finalMessage + 'Fizz'
-  if (isFizzBuzz[1] === true) finalMessage = finalMessage + 'Buzz'
+  if (isFizzBuzz[0] === true) {
+    finalResult = finalResult + 'Fizz'
+    finalMessage = 'El número es divisible por 3'
+  }
+  if (isFizzBuzz[1] === true) {
+    finalResult = finalResult + 'Buzz'
+    if (isFizzBuzz[0] === true) {
+      finalMessage = finalMessage + ' y 5'
+    } else {
+      finalMessage = 'El número es divisible por 5'
+    }
+  }
+  if (isFizzBuzz[0] === false && isFizzBuzz[1] === false) {
+    finalResult = inputNumber
+    finalMessage = 'El número no es divisible ni por 3 ni por 5'
+  }
 
-  return finalMessage
+  return {
+    status: 'ok',
+    message: finalMessage,
+    data: {
+      input: inputNumber,
+      output: finalResult,
+    },
+  }
 }
-
-console.log(fizzBuzz(6))
