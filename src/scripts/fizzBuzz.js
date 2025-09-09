@@ -1,13 +1,13 @@
 /**
-Funcional: Si el número ingresado es divisible por 3, se muestra Fizz.
+✅ Funcional: Si el número ingresado es divisible por 3, se muestra Fizz.
 
-Funcional: Si el número ingresado es divisible por 5, se muestra Buzz.
+✅ Funcional: Si el número ingresado es divisible por 5, se muestra Buzz.
 
-Funcional: Si el número ingresado es divisible por 3 y 5, se muestra FizzBuzz.
+✅ Funcional: Si el número ingresado es divisible por 3 y 5, se muestra FizzBuzz.
 
-Funcional: Si el número ingresado no es divisible ni por 3 ni por 5, se muestra el número mismo.
+✅ Funcional: Si el número ingresado no es divisible ni por 3 ni por 5, se muestra el número mismo.
 
-Funcional: Si el usuario ingresa un valor no numérico, se debe mostrar un mensaje de error.
+✅ Funcional: Si el usuario ingresa un valor no numérico, se debe mostrar un mensaje de error.
 
 Funcional: Se muestra en pantalla un historial con los valores ingresados y sus resultados.
 
@@ -15,7 +15,7 @@ Técnico: Guardar cada número ingresado en un objeto junto con su resultado.
 
 Técnico: Manejar errores usando <span>try...catch</span>.
 
-Técnico: implementar una estructura de retorno con el siguiente formato:
+✅ Técnico: implementar una estructura de retorno con el siguiente formato:
  * 
  * 
  * 
@@ -42,8 +42,18 @@ export const fizzBuzz = (input) => {
   let finalResult = ''
   let finalMessage = ''
 
-  // Validations
+  // Validations to make sure we are workning with a number
   const inputNumber = parseInt(input)
+  if (inputNumber === NaN) {
+    return {
+      status: 'Error',
+      message: 'Incorrect value that cannot be interpreted as number used',
+      data: {
+        input: NaN,
+        output: NaN,
+      },
+    }
+  }
 
   // Check the number in both 3 and 5 bases
   isFizzBuzz[0] = checkFizz(inputNumber)
