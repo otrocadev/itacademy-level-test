@@ -44,10 +44,11 @@ export const fizzBuzz = (input) => {
 
   // Validations to make sure we are workning with a number
   const inputNumber = parseInt(input)
-  if (inputNumber === NaN) {
+  if (isNaN(inputNumber)) {
     return {
       status: 'Error',
-      message: 'Incorrect value that cannot be interpreted as number used',
+      message:
+        'The value of the input cannot be interpreted as an integer number',
       data: {
         input: NaN,
         output: NaN,
