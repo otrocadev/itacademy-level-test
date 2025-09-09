@@ -116,4 +116,34 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
     expect(resultado).toEqual(respuesta_esperada) // valida estructura de respuesta
     expect(resultado.data.output).toBe(8)
   })
+
+  test('returns an error code when the input is not an integer', () => {
+    //Gherking test
+    /**
+     * Scenario: Número no entero
+     * Given un número 8
+     * When el número es procesado
+     * Then se muestra el número ingresado
+     */
+
+    // Arrange: Preparar el escenario
+    let valor_entrada = 'e'
+    let respuesta_esperada = {
+      status: 'Error', // Código indicando éxito
+      message:
+        'The value of the input cannot be interpreted as an integer number', // Mensaje de validación
+      data: {
+        input: NaN, // Número evaluado
+        output: NaN, // Resultado esperado
+      },
+    }
+
+    // Act: ejecutar el escenario
+    let resultado = fizzBuzz(valor_entrada)
+
+    // Assert: Comprobar el escenario
+    expect(typeof resultado.data.input).toBe('number') // valida que input sea un número
+    expect(resultado).toEqual(respuesta_esperada) // valida estructura de respuesta
+    expect(resultado.data.output).toBe(NaN)
+  })
 })

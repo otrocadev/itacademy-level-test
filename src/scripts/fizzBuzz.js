@@ -17,10 +17,6 @@
 
 ✅ Técnico: implementar una estructura de retorno con el siguiente formato:
  * 
- * 
- * 
- * 
- * 
  * Responsabilidad: gestionar la lógica de FizzBuzz
  * Recuerda que la estructura de las respuestas debe ser estructurada:
  *  {
