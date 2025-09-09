@@ -9,11 +9,11 @@
 
 ✅ Funcional: Si el usuario ingresa un valor no numérico, se debe mostrar un mensaje de error.
 
-Funcional: Se muestra en pantalla un historial con los valores ingresados y sus resultados.
+✅ Funcional: Se muestra en pantalla un historial con los valores ingresados y sus resultados.
 
-Técnico: Guardar cada número ingresado en un objeto junto con su resultado.
+✅ Técnico: Guardar cada número ingresado en un objeto junto con su resultado.
 
-Técnico: Manejar errores usando <span>try...catch</span>.
+✅ Técnico: Manejar errores usando <span>try...catch</span>.
 
 ✅ Técnico: implementar una estructura de retorno con el siguiente formato:
  * 
